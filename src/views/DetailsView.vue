@@ -7,12 +7,15 @@
             <template v-if="user" #title>
                 {{user.name}}
             </template>
-            <template #subtitle>
-                Username: {{user.username}}
+            <template class="more-info" #subtitle>
+                <p>Username: {{user.username}}</p>
+                <p>Email: {{user.email}}</p>
+                <p>Phone: {{user.phone}}</p>
+                <p>Website: {{user.website}}</p>
             </template>
             <template #content>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+                <p>Company name: {{user.company.name}}</p>
+                <p>Responsible for: {{user.company.bs}}</p>
             </template>
             <template #footer>
                 <Button icon="pi pi-check" label="Save" />
@@ -43,6 +46,11 @@ export default defineComponent ({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.more-info {
+    display: flex;
+    flex-direction: column;
 }
 
 p {
